@@ -3,11 +3,11 @@ public class AccountManager {
    public void deposit(double amount) {
        balance += amount;
    }
-   public void withdraw(double amount) throws Exception {
+   public void withdraw(double amount) throws BalanceInsufficentException {
        if (balance >= amount) {
            balance = getBalance() - amount;
        }else {
-           throw new Exception("Bakiye Yetersiz");
+           throw new BalanceInsufficentException("Bakiye Yetersiz");
        }
    }
 
